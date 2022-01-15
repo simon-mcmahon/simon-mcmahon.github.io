@@ -1,6 +1,13 @@
-
-
-# Making a new resume website with a blog section.
+---
+title: "Creating new personal website with blog"
+last_modified_at: 2022-01-14T16:20:02-05:00
+categories:
+  - blog
+tags:
+  - jekyll
+  - blog
+  - github
+---
 
 ## Step 1: Archive your previous resume website hosted with github pages
 
@@ -21,7 +28,7 @@ Github pages and indeed the template we are following are based on Jekyll.
 My daily driving operating system is `Linux Mint 20.3 Cinnamon` which is based on `Ubuntu 20.04.5 LTS` . So we can follow the installation documentation found [here](https://jekyllrb.com/docs/installation/ubuntu/) .
 
 But long story short...
-```
+```shell
 # Install some dependencies 
 sudo apt-get install ruby-full build-essential zlib1g-dev
 #Fresh linux mint 20.3 doesn't have git
@@ -38,7 +45,7 @@ source ~/.bashrc
 gem install jekyll bundler
 ```
 
-### Setup local git development in your repo
+### Setup local git development in your local machine
 
 #### Get a personal authentication token
 Now we need to be able to actually make changes and push code to our repository. Github [banned password authentication](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/) in August 2021, so we must create a personal access token. Follow the instructions from github about that [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). 
@@ -46,32 +53,32 @@ Now we need to be able to actually make changes and push code to our repository.
 *Note that you will need to give it ```repo``` status access.* 
 
 Copy the token **NOW** as you won't get another chance.
-![Copy the text from your PAT](/assets/images/creating-resume-blog/creating-resume-blog/personal_access_tokens.png)
+![Copy the text from your PAT](/assets/images/creating-resume-blog/personal_access_tokens.png)
 
 
 ## Step 3: Take the Jekyll template to replicate.
 
-With many thanks to [chadbaldwin](https://github.com/chadbaldwin) we can follow the guide he has posted on his blog [here](https://chadbaldwin.net/2021/03/14/how-to-build-a-sql-blog.html). For most of the steps.
+With many thanks to [mmistakes](https://github.com/mmistakes) we can use the customisable theme [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) and the [Github pages starter site](https://github.com/mmistakes/mm-github-pages-starter) he has provided.
 
-Download the repository at [simple-blog-bootstrap](https://github.com/chadbaldwin/simple-blog-bootstrap) by clicking `Code -> Download as Zip` as seen in the picture.
+Download the repository at [mm-github-pages-starter](https://github.com/mmistakes/mm-github-pages-starter) by clicking `Code -> Download as Zip` as seen in the picture.
 
-![download as zip](/assets/images/creating-resume-blog/creating-resume-blog/download-as-zip.png)
+![download as zip](/assets/images/creating-resume-blog/download-as-zip.png)
 
 ### Make a new github pages repository
 
 Ensure to call this repository `{username}.github.io`. Make sure to set it to private for now so we don't advertise a shabby looking website.
 
-![make new repo](/assets/images/creating-resume-blog/creating-resume-blog/new-git-repo.png)
+![make new repo](/assets/images/creating-resume-blog/new-git-repo.png)
 
 ### Setup the local git repo
 
 Firstly, extract the zip file you downloaded to `simple-blog-bootstrap-main`. But to keep things simple for us, I am going to rename this to our repo's name.
 
-```
-mv ./simple-blog-bootstrap-main ./simon-mcmahon.github.io
+```shell
+mv ./mm-github-pages-starter-master ./simon-mcmahon.github.io
 ```
 Then, initialise the git repo. And push an initial commit to github. This is where you will be asked to enter in your personal access token. Inside the folder, do:
-```
+```shell
 git init
 git add .
 git commit -m "initial commit"
@@ -80,88 +87,42 @@ git branch -M main
 git push -u origin main
 ```
 
-![git push](/assets/images/creating-resume-blog/creating-resume-blog/git-push.png)
+![git push](/assets/images/creating-resume-blog/git-push.png)
 
-# Work in progress
+### Emulate the site locally
 
-Add in the forgotten stuff to the git ignore.
+Next we build the gem packages and serve the site locally
+```shell
+bundle install 
+# Add --baseurl to emulate relative urls as in github pages
+bundle exec jekyll serve --baseurl=""
 ```
-Gemfile
-Gemfile.lock
-.jekyll-metadata
-.jekyll-cache
+Then go to [localhost:4000](http://localhost:4000) to see your website.
+
+![bundle serve](/assets/images/creating-resume-blog/bundle-serve.png)
+
+And you should see the default site layout.
+![default website](/assets/images/creating-resume-blog/default-site-layout.png)
+
+
+## Step 4: Customising the _config.yml file
+
+Since we are using a starting template, not all options are present in our `_config.yml` file. Go to the [theme repo _config.yml](https://github.com/mmistakes/minimal-mistakes/blob/master/_config.yml) to find out all the options.
+
+To start off with, the documentation recommends adding the version number to the remote theme plugin.
+```yaml
+# Add version number to this line
+remote_theme: "mmistakes/minimal-mistakes@4.24.0" 
+
+# Add this line for dark skin
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 ```
-In order to get it to run locally, we need to do:
+Next add a file called `CNAME` with the contents `{your website url}.com` for github pages if you have a domain.
+You will have to add a CNAME record with your DNS provider manually. I leave that as an exercise for the reader.
 
-```
-bundle init
-```
+Finally, edit all the other personal details. Add your picture, a favicon in the root directory and commit and push your changes.
 
-Then add some stuff about needed gems to our Gemfile. From [here](https://jekyllrb.com/docs/ruby-101/#gemfile)
+**WELL DONE:** Now we have our very own blog!
+{: .notice--success}
 
-```
-gem "jekyll"
-
-gem "minima", "~> 2.5"
-
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-end
-```
-Then do `bundle install` and `bundle exec jekyll serve`.
-Then look for it on port 4000.
-
-![bundle serve](/assets/images/creating-resume-blog/creating-resume-blog/bundle-serve.png)
-
-This still gives us a weird page `index of`. Something is wrong compared to github pages. Github pages builds simonmcmahon.com properly. But it doesn't display locally right.
-
-![github serve](/assets/images/creating-resume-blog/creating-resume-blog/github-pages-blog.png)
-
-![local serve](/assets/images/creating-resume-blog/creating-resume-blog/local-blog-archive.png)
-
-......................
-
-After much fiddling, the boilerplate for the Gemfile I needed came from the default Gemfile after doing `jekyll new test`.
-Along with some stuff in the `_config.html` file.
-
-```
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
-#gem "jekyll", "~> 4.2.1"
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.5"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-gem "github-pages", group: :jekyll_plugins
-
-
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
-end
-```
-
-Use jekyll instead of markdown for code snippets:
-
-Jekyll also offers powerful support for code snippets:
-
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-
-Or use https://highlightjs.org/ to use the github syntax for code highlighting
-
-# TODO
-add in more languages to highlightjs. 
-https://highlightjs.org/download/
-AND look at the _includes/head.html
-
+ 
