@@ -1,12 +1,12 @@
 ---
-title: "Creating new personal website with blog"
+title: "Creating this blog with Jekyll and Github Pages"
 last_modified_at: 2022-01-14T16:20:02-05:00
 categories:
   - blog
 tags:
   - jekyll
   - blog
-  - github
+  - github pages
 ---
 
 ## Step 1: Archive your previous resume website hosted with github pages
