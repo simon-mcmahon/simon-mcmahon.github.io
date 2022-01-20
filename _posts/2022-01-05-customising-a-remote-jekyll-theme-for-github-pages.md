@@ -1,6 +1,6 @@
 ---
 title: "Customising a remote jekyll theme for Github Pages"
-last_modified_at: 2022-01-17T16:20:02-05:00
+last_modified_at: 2022-01-05T16:20:02-05:00
 categories:
   - blog
 tags:
@@ -8,6 +8,8 @@ tags:
   - blog
   - github pages
 ---
+
+Using a remote theme adds simplicity, but you can't customise it, right? Not quite. 
 
 ## The Motivation
 
@@ -26,11 +28,11 @@ Specifically, in the footer all websites in the theme. A sentence giving the fra
 
 ![default footer](/assets/images/customising-blog-theme/default-theme-footer.png)
 
-I chose to give credit for the theme, on the [about](/about/) page and in the [README](https://github.com/simon-mcmahon/simon-mcmahon.github.io) of the sites' respository. But felt every page to be a little much.
+I chose to give credit for the theme, on the [about](/about/) page and in the [README](https://github.com/simon-mcmahon/simon-mcmahon.github.io) of the sites' repository. But felt every page to be a little much.
 
 ## The Solution
 
-As always, a [stackoverflow question](https://stackoverflow.com/questions/49116592/customize-jekyll-remote-theme-for-github-pages) comes to the rescue. 
+As always, a [stack overflow question](https://stackoverflow.com/questions/49116592/customize-jekyll-remote-theme-for-github-pages) comes to the rescue. 
 
 Turns out, if you know where the theme file is that needs to be changed and modify it, the local copy overrides the remote theme.
 {: .notice--info}
@@ -41,7 +43,7 @@ Next, search the text of the files for the text `Powered by` to match the text i
 
 ![search for Powered by](/assets/images/customising-blog-theme/search-files.png)
 
-Open each result and read the file to see if its context matches. I discovered the relevent file was `_includes/footer.html` with the code:
+Open each result and read the file to see if its context matches. I discovered the relevant file was `_includes/footer.html` with the code:
 
 ```html
 {%raw%}
@@ -54,7 +56,7 @@ Open each result and read the file to see if its context matches. I discovered t
 ```
 
 Finally, in your blog repository. Create the `_includes` folder, and copy the file `footer.html` into it.
-Then, modify the html to remove the final sentence.
+Then, modify the HTML to remove the final sentence.
 
 ```html
 {%raw%}

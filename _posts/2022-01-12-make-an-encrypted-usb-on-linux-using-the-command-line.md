@@ -1,6 +1,6 @@
 ---
 title: "Make an encrypted USB on linux using the command line"
-last_modified_at: 2022-01-17T16:20:02-05:00
+last_modified_at: 2022-01-12T16:20:02-05:00
 categories:
   - blog
 tags:
@@ -8,7 +8,7 @@ tags:
   - luks
   - encryption
   - security
-  - command line
+  - bash
 ---
 
 This tutorial will create a 2-partition USB, with a clear 4GB available on all systems and a 2nd encrypted Linux-only partition.

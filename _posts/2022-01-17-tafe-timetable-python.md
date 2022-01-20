@@ -1,6 +1,6 @@
 ---
 title: "Transferring my TAFE QLD timetable into Google Calendar with Python"
-last_modified_at: 2022-01-19T16:20:02-05:00
+last_modified_at: 2022-01-17T16:20:02-05:00
 categories:
   - blog
 tags:
@@ -11,7 +11,7 @@ tags:
   - tafe
 ---
 
-TAFE Queensland, where I am studying a Diploma of IT, has a website to access the [class timetables](https://timetables.tafeqld.edu.au/group). However, it only gives output in the form of text. But we want to put it into [Google Calendar](https://calendar.google.com). Data entry is bad, so let's automate it using `python`!
+TAFE Queensland has a website to access the [class timetables](https://timetables.tafeqld.edu.au/group). However, it is text-only. Let's make it an ical file using `python` (to import it to [Google Calendar](https://calendar.google.com) ).
 
 This project sort of grew larger than I thought it would. So I made a [github repository](https://github.com/simon-mcmahon/tafeqld-timetable-ics-parsing) with all the files and effort.
 {: .notice--info}

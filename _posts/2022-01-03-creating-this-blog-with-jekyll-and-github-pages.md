@@ -1,6 +1,6 @@
 ---
 title: "Creating this blog with Jekyll and Github Pages"
-last_modified_at: 2022-01-14T16:20:02-05:00
+last_modified_at: 2021-01-03T16:20:02-05:00
 categories:
   - blog
 tags:
@@ -8,6 +8,8 @@ tags:
   - blog
   - github pages
 ---
+
+Every blog needs a first post. Here's the quick set up for a blog (with search). All thanks go to Jekyll and [minimal mistakes](https://github.com/mmistakes)!
 
 ## Step 1: Archive your previous resume website hosted with github pages
 

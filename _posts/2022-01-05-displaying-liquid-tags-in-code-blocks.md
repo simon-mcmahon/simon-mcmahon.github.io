@@ -1,6 +1,6 @@
 ---
 title: "Displaying Jekyll liquid in code blocks."
-last_modified_at: 2022-01-17T16:20:02-05:00
+last_modified_at: 2022-01-05T16:20:02-05:00
 categories:
   - blog
 tags:
@@ -9,10 +9,11 @@ tags:
   - markdown
   - code
 ---
+When inside a code block, liquid template elements are still parsed. Which is a problem when blogging about Jekyll. But the `{% raw %}{%{% endraw %}raw{% raw %}%}{% endraw %}` tag comes to the rescue.
 
 In a [recent blog post](/blog/customising-a-remote-jekyll-theme-for-github-pages/), I wrote about modifying Jekyll templates and encountered a problem.
 
-When inside a code block, liquid template elements are still parsed. For example, the markdown
+For example, the markdown
 ````markdown
 ```html
 {%raw%}<div> 
