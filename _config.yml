@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I'm Simon, an early career Network Engineer. This is my blog and resume. Here you will find posts about my learning, self-hosting & coding projects!
 #twitter_username: username
 github_username: simon-mcmahon
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 words_per_minute: 120
 search: true
@@ -87,7 +87,7 @@ plugins:
 
 author:
   name   : "Simon McMahon"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.png"
   bio    : "Aspiring Network Engineer. Full-time nerd. Lover of IT, hiking and running."
   links:
     - label: "Website"
