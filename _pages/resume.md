@@ -2,7 +2,7 @@
 title: "Resume"
 permalink: /resume/
 author_profile: true
-classes: resume-page
+classes: wide
 toc: true
 toc_label: "Contents"
 toc_icon: "list"
