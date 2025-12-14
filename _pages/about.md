@@ -11,6 +11,10 @@ I'm building skills for a career in blue team cybersecurity.
 
 In my free time I like hiking 🥾 and disc golf 🥏.
 
+Here you will find blog posts about my learning and projects.
+
+I'm always studying, tinkering and evolving my skills, so follow my **[Linkedin](https://www.linkedin.com/in/simon-mcmahon)** or read my **[Resume](/resume)** for more.
+
 ### Day to day work
 
 I currently work at **Billabong Australia** where we support a mixed retail and corporate environment. 
@@ -27,10 +31,6 @@ Day to day, I work with tools and platforms like:
 * Darktrace
 * Cisco Meraki
 * Palo Alto Firewalls / GlobalProtect VPN
-
-Here you will find blog posts about my learning and projects.
-
-I'm always studying, tinkering and evolving my skills, so follow my [Linkedin](https://www.linkedin.com/in/simon-mcmahon) or read my [Resume](/resume) for more.
 
 ### Credit and Thanks
 

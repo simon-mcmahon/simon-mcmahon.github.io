@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #twitter_username: username
 github_username: simon-mcmahon
 minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 words_per_minute: 120
 search: true
 
@@ -116,13 +116,13 @@ footer:
 #      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/simon-mcmahon"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/simon-mcmahon"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:blog [a t] simonmcmahon [d ot]com"
+      url: "mailto:simon [a t] simonmcmahon [d ot]com"
 #    - label: "Instagram"
 #      icon: "fab fa-fw fa-instagram"
 #      url: "https://instagram.com/"
