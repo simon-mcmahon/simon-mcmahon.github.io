@@ -1,4 +1,12 @@
-_site
-.sass-cache
+# Jekyll build output + caches
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
+
+# Bundler (because you're installing to vendor/bundle)
+.bundle/
+vendor/bundle/
+
+# GitHub Pages sites commonly ignore the lockfile
 Gemfile.lock
